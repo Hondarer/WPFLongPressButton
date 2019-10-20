@@ -360,7 +360,7 @@ namespace LongPressButtonSample
         protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
         {
             // マウスによる要因でカウントダウンが始まっている場合に限って止める。
-            // この判定がないと、キーボード長押し中にマウスをコントロール上から動かすと
+            // この判定がないと、キーボード長押し中にマウスをクリックすると
             // カウントダウンが誤停止してしまう。
             if (mouseLeftButtonDownEventArgs != null)
             {
