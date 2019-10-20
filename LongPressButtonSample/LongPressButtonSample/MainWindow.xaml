@@ -1,0 +1,23 @@
+﻿<Window x:Class="LongPressButtonSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LongPressButtonSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <local:LongPressButton x:Name="LongPressButton" FontSize="24" HoldSeconds="3" Margin="8" Click="LongPressButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="長押しボタン" />
+                    <TextBlock Text="{Binding LeftSeconds, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:LongPressButton}}}" />
+                </StackPanel>
+            </local:LongPressButton>
+
+            <Button Content="ふつうのボタン" FontSize="24" Margin="8" Click="Button_Click" />
+
+            <TextBlock FontSize="24" x:Name="information" Margin="8" />
+        </StackPanel>
+    </Grid>
+</Window>
